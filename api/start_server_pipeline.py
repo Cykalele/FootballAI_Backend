@@ -215,6 +215,8 @@ def git_push_ui_repo():
     """
     try:
         repo_path = os.path.join(BASE_DIR, "FootballAI_Frontend")
+        subprocess.run(["git", "pull", "--rebase"], cwd=repo_path)
+
         subprocess.run(["git", "add", "-A"], cwd=repo_path)
         subprocess.run(["git", "commit", "-m", "Automatischer Commit beim Start"], cwd=repo_path)
         subprocess.run(["git", "push"], cwd=repo_path)
