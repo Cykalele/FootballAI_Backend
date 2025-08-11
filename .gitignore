@@ -1,0 +1,40 @@
+# Python bytecode caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+footballAI_env/
+.venv/
+venv/
+ENV/
+
+# Session and runtime outputs
+sessions/*
+output/
+*.log
+
+# Jupyter and analysis
+.ipynb_checkpoints/
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+
+# Test and tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Streamlit secrets kept local
+.streamlit/secrets.toml
+
+# Binaries that should not be versioned
+cloudflared.exe
