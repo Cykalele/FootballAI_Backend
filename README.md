@@ -27,7 +27,7 @@ Both must be placed within a shared parent directory.
 1. **Clone or Download the Repository**  
    Either download the repository from GitHub or clone it:
    ```powershell
-   git clone https://github.com/Cykalele/FootballAI_Backend.git
+   git clone https://github.com/ToHauser/FootballAI_Backend.git
 
 2. **Place Cloudflare Tunnel Binary**
    Place the file cloudflared.exe in the project’s root directory.

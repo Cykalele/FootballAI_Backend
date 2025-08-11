@@ -15,14 +15,14 @@ import queue
 # === Settings ===
 # Default Python interpreter paths for backend and frontend virtual environments
 DEFAULT_BACKEND_PYTHON = r"./footballAI_env/Scripts/python.exe"
-DEFAULT_FRONTEND_PYTHON = r"../03_FootballAI-UI/football_frontend/Scripts/python.exe"
+DEFAULT_FRONTEND_PYTHON = r"../FootballAI_Frontend/football_frontend/Scripts/python.exe"
 
 # Compute absolute base directory path
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-DEFAULT_CONFIG_PATH_UI = os.path.join(BASE_DIR, "03_FootballAI-UI", "config.py")
-DEFAULT_CONFIG_PATH_API = os.path.join(BASE_DIR, "02_FootballAI", "config", "settings.py")
-DEFAULT_APP_PATH = os.path.join(BASE_DIR, "03_FootballAI-UI", "app.py")
-GIT_UI_REPO = "https://github.com/Cykalele/FootballAI-UI.git"
+DEFAULT_CONFIG_PATH_UI = os.path.join(BASE_DIR, "FootballAI_Frontend", "config.py")
+DEFAULT_CONFIG_PATH_API = os.path.join(BASE_DIR, "FootballAI_Backend", "config", "settings.py")
+DEFAULT_APP_PATH = os.path.join(BASE_DIR, "FootballAI_Frontend", "app.py")
+GIT_UI_REPO = "https://github.com/ToHauser/FootballAI-UI.git"
 
 # Default ports for backend (FastAPI) and frontend (Streamlit)
 PORT = 8000
@@ -63,7 +63,7 @@ def build_streamlit_component():
     Runs npm install and npm run build inside the component directory.
     """
     build_dir = os.path.abspath(
-        os.path.join(BASE_DIR, "03_FootballAI-UI", "streamlit_team_component", "template", "my_component", "frontend")
+        os.path.join(BASE_DIR, "FootballAI_Frontend", "streamlit_team_component", "template", "my_component", "frontend")
     )
     if not os.path.exists(os.path.join(build_dir, "build")):
         print("🛠️ Building Streamlit component with npm...")
@@ -133,7 +133,7 @@ def write_secrets_toml(api_base_url):
     """
     Writes the public API base URL into Streamlit's secrets.toml so the frontend can access it.
     """
-    secrets_path = os.path.join(BASE_DIR, "03_FootballAI-UI", ".streamlit", "secrets.toml")
+    secrets_path = os.path.join(BASE_DIR, "FootballAI_Frontend", ".streamlit", "secrets.toml")
     os.makedirs(os.path.dirname(secrets_path), exist_ok=True)
 
     with open(secrets_path, "w", encoding="utf-8") as f:
@@ -214,7 +214,7 @@ def git_push_ui_repo():
     Automatically commits and pushes changes in the UI repository to GitHub.
     """
     try:
-        repo_path = os.path.join(BASE_DIR, "03_FootballAI-UI")
+        repo_path = os.path.join(BASE_DIR, "FootballAI_Frontend")
         subprocess.run(["git", "add", "-A"], cwd=repo_path)
         subprocess.run(["git", "commit", "-m", "Automatischer Commit beim Start"], cwd=repo_path)
         subprocess.run(["git", "push"], cwd=repo_path)

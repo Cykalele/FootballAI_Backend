@@ -11,6 +11,8 @@ ENV/
 
 # Session and runtime outputs
 sessions/*
+!sessions/.gitkeep
+
 output/
 *.log
 

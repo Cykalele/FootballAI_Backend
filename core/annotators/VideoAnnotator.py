@@ -1,6 +1,6 @@
 import subprocess
 import os
-os.add_dll_directory(r"C:\Users\hause\OneDrive\01_Studium\02_Master\05_Masterarbeit\02_FootballAI\footballAI_env\Lib\site-packages\cv2")
+#os.add_dll_directory(r"C:\Users\hause\OneDrive\01_Studium\02_Master\05_Masterarbeit\02_FootballAI\FootballAI_Backend\footballAI_env\Lib\site-packages\cv2")
 
 import cv2
 import json
